@@ -10,27 +10,18 @@ object Singleton {
 
 class MainActivity : AppCompatActivity() {
 
-    companion object {
-        var companionMember = 0
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-
 
         button.setOnClickListener {
             Global.count++
             println("*** ------------------------------------")
             val fm = supportFragmentManager
             val trans = fm.beginTransaction()
-            trans.replace(R.id.container, F1(), "tag")
+            trans.replace(R.id.container, F1(),"tag")
             trans.commit()
         }
-
-
 
         btnBack.setOnClickListener {
             Global.count++
